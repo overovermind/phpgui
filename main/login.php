@@ -8,6 +8,8 @@ if (isset($_GET['l']) && !empty($_GET['l'])) {
         $_SESSION['core_host'] = $login_data[0];
         $_SESSION['core_pass'] = 32 === strlen($login_data[1]) ? $login_data[1] : md5($login_data[1]);
     }
+    
+    require_once 'style/' . $_ENV['GUI_STYLE'];
 }
 
 if (isset($_POST['host']) && !empty($_POST['host'])) {
